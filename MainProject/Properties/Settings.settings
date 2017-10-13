@@ -1,0 +1,89 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MainProject.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="infoFarmName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ภูเก็ตฟาร์มโคเนื้อ</Value>
+    </Setting>
+    <Setting Name="infoCompany" Type="System.String" Scope="User">
+      <Value Profile="(Default)">บริษัท ภูเก็ตฟาร์มโคเนื้อ จำกัด</Value>
+    </Setting>
+    <Setting Name="infoFName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="infoLName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="infoAddres" Type="System.String" Scope="User">
+      <Value Profile="(Default)">80/2</Value>
+    </Setting>
+    <Setting Name="infoCity" Type="System.String" Scope="User">
+      <Value Profile="(Default)">กะทู้</Value>
+    </Setting>
+    <Setting Name="infoDistrict" Type="System.String" Scope="User">
+      <Value Profile="(Default)">เมือง</Value>
+    </Setting>
+    <Setting Name="infoProvince" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ภูเก็ต</Value>
+    </Setting>
+    <Setting Name="infoCountry" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ประเทศไทย</Value>
+    </Setting>
+    <Setting Name="infoTel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">087-234-4567</Value>
+    </Setting>
+    <Setting Name="infoMobile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">088-234-4567</Value>
+    </Setting>
+    <Setting Name="infoFax" Type="System.String" Scope="User">
+      <Value Profile="(Default)">089-234-4567</Value>
+    </Setting>
+    <Setting Name="infoEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">customer@phuketcow.com</Value>
+    </Setting>
+    <Setting Name="infoWebsite" Type="System.String" Scope="User">
+      <Value Profile="(Default)">www.phuketcow.com</Value>
+    </Setting>
+    <Setting Name="FarmManageDatabaseConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database\FarmManageDatabase.mdf;Integrated Security=True;User Instance=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database\FarmManageDatabase.mdf;Integrated Security=True;User Instance=True</Value>
+    </Setting>
+    <Setting Name="fUsernameList" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="infoFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">th-TH</Value>
+    </Setting>
+    <Setting Name="infoPostcode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">83120</Value>
+    </Setting>
+    <Setting Name="infoTax" Type="System.String" Scope="User">
+      <Value Profile="(Default)">12121-23082394-1231</Value>
+    </Setting>
+    <Setting Name="infoPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="dbUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="dbPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="dbInstance" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\SQLEXPRESS</Value>
+    </Setting>
+    <Setting Name="dbName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="dbWinAuth" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="sysFirstLoad" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

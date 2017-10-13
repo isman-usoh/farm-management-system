@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85680247-C33D-462F-80A5-547BF22F6AB4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MainProject</RootNamespace>
+    <AssemblyName>CowManagementSys</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cow-head-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MainProject.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\FarmManageDataSet.cs">
+      <DependentUpon>FarmManageDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database\FarmManageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FarmManageDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDataSet.cs">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RemoveBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\RemoveBillForm.Designer.cs">
+      <DependentUpon>RemoveBillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\VaccineBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\VaccineBillForm.Designer.cs">
+      <DependentUpon>VaccineBillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReceiptBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReceiptBillForm.Designer.cs">
+      <DependentUpon>ReceiptBillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReceverBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReceverBillForm.Designer.cs">
+      <DependentUpon>ReceverBillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="UserInterface\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Control\UserLogUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Control\UserLogUC.Designer.cs">
+      <DependentUpon>UserLogUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Corral\AddCorralForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Corral\AddCorralForm.Designer.cs">
+      <DependentUpon>AddCorralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Corral\CorralManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Corral\CorralManageForm.Designer.cs">
+      <DependentUpon>CorralManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Cow\CowDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Cow\CowDetailForm.Designer.cs">
+      <DependentUpon>CowDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Cow\AddDiseaseHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Cow\AddDiseaseHistoryForm.Designer.cs">
+      <DependentUpon>AddDiseaseHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Cow\AddDiseaseMedicineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Cow\AddDiseaseMedicineForm.Designer.cs">
+      <DependentUpon>AddDiseaseMedicineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Customer\AddCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Customer\AddCompanyForm.Designer.cs">
+      <DependentUpon>AddCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Customer\CustomerDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Customer\CustomerDetailForm.Designer.cs">
+      <DependentUpon>CustomerDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Customer\AddCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Customer\AddCustomerForm.Designer.cs">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Customer\CustomerManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Customer\CustomerManageForm.Designer.cs">
+      <DependentUpon>CustomerManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Form\SelectFormForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Form\SelectFormForm.Designer.cs">
+      <DependentUpon>SelectFormForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Gene\AddGeneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Gene\AddGeneForm.Designer.cs">
+      <DependentUpon>AddGeneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Gene\GeneManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Gene\GeneManageForm.Designer.cs">
+      <DependentUpon>GeneManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\AddBornForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\AddBornForm.Designer.cs">
+      <DependentUpon>AddBornForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\AddCowOrderInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\AddCowOrderInForm.Designer.cs">
+      <DependentUpon>AddCowOrderInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\AddCowOrderOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\AddCowOrderOutForm.Designer.cs">
+      <DependentUpon>AddCowOrderOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\AddDeadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\AddDeadForm.Designer.cs">
+      <DependentUpon>AddDeadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\OtherOrderManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\OtherOrderManageForm.Designer.cs">
+      <DependentUpon>OtherOrderManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\OrderOutWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\OrderOutWizardForm.Designer.cs">
+      <DependentUpon>OrderOutWizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\InOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\InOrderForm.Designer.cs">
+      <DependentUpon>InOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\OrderInWizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\OrderInWizardForm.Designer.cs">
+      <DependentUpon>OrderInWizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\OrderManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\OrderManageForm.Designer.cs">
+      <DependentUpon>OrderManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Order\OutOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Order\OutOrderForm.Designer.cs">
+      <DependentUpon>OutOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Recipes\RecipesCalculateDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Recipes\RecipesCalculateDetailForm.Designer.cs">
+      <DependentUpon>RecipesCalculateDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Recipes\RecipesCalculateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Recipes\RecipesCalculateForm.Designer.cs">
+      <DependentUpon>RecipesCalculateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Recipes\AddRecipesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Recipes\AddRecipesForm.Designer.cs">
+      <DependentUpon>AddRecipesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Recipes\RecipesManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Recipes\RecipesManageForm.Designer.cs">
+      <DependentUpon>RecipesManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Resource\AddResourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Resource\AddResourceForm.Designer.cs">
+      <DependentUpon>AddResourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Resource\ResourceExplorerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Resource\ResourceExplorerForm.Designer.cs">
+      <DependentUpon>ResourceExplorerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Resource\ResourceManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Resource\ResourceManagerForm.Designer.cs">
+      <DependentUpon>ResourceManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Setting\BackUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Setting\BackUpForm.Designer.cs">
+      <DependentUpon>BackUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Setting\DatabaseSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Setting\DatabaseSettingForm.Designer.cs">
+      <DependentUpon>DatabaseSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Setting\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Setting\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Setting\InformationSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Setting\InformationSettingForm.Designer.cs">
+      <DependentUpon>InformationSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Static\CowPriceChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Static\CowPriceChartForm.Designer.cs">
+      <DependentUpon>CowPriceChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Static\CowPriceStaticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Static\CowPriceStaticForm.Designer.cs">
+      <DependentUpon>CowPriceStaticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Static\StaticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Static\StaticForm.Designer.cs">
+      <DependentUpon>StaticForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\AddStockDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\AddStockDetailForm.Designer.cs">
+      <DependentUpon>AddStockDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\AddVaccineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\AddVaccineForm.Designer.cs">
+      <DependentUpon>AddVaccineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\RemoveStockDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\RemoveStockDetailForm.Designer.cs">
+      <DependentUpon>RemoveStockDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\NewStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\NewStockForm.Designer.cs">
+      <DependentUpon>NewStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\StockDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\StockDetailForm.Designer.cs">
+      <DependentUpon>StockDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\StockManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\Supplies\StockManageForm.Designer.cs">
+      <DependentUpon>StockManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\User\AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\User\AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\User\ChangePassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\User\ChangePassForm.Designer.cs">
+      <DependentUpon>ChangePassForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\User\UserDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\User\UserDetailForm.Designer.cs">
+      <DependentUpon>UserDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\User\UserLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\User\UserLoginForm.Designer.cs">
+      <DependentUpon>UserLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\User\UserManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\User\UserManageForm.Designer.cs">
+      <DependentUpon>UserManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ModeDetector.cs" />
+    <Compile Include="Util\MIMEAssistant.cs" />
+    <Compile Include="Util\DialogUtil.cs" />
+    <Compile Include="Util\KeyPressUtil.cs" />
+    <Compile Include="Util\SQLServerHelper.cs" />
+    <Compile Include="Util\TypeUtil.cs" />
+    <Compile Include="Util\ValidatingUtil.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\RemoveBillForm.resx">
+      <DependentUpon>RemoveBillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RemoveBill.rdlc" />
+    <EmbeddedResource Include="Report\VaccineBillForm.resx">
+      <DependentUpon>VaccineBillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\VaccineBill.rdlc" />
+    <EmbeddedResource Include="Report\ReceiptBillForm.resx">
+      <DependentUpon>ReceiptBillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReceverBill.rdlc" />
+    <EmbeddedResource Include="Report\ReceverBillForm.resx">
+      <DependentUpon>ReceverBillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReceiptBill.rdlc" />
+    <EmbeddedResource Include="UserInterface\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Control\UserLogUC.resx">
+      <DependentUpon>UserLogUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Corral\AddCorralForm.resx">
+      <DependentUpon>AddCorralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Corral\CorralManageForm.resx">
+      <DependentUpon>CorralManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Cow\CowDetailForm.resx">
+      <DependentUpon>CowDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Cow\AddDiseaseHistoryForm.resx">
+      <DependentUpon>AddDiseaseHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Cow\AddDiseaseMedicineForm.resx">
+      <DependentUpon>AddDiseaseMedicineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Customer\AddCompanyForm.resx">
+      <DependentUpon>AddCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Customer\CustomerDetailForm.resx">
+      <DependentUpon>CustomerDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Customer\AddCustomerForm.resx">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Customer\CustomerManageForm.resx">
+      <DependentUpon>CustomerManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Form\SelectFormForm.resx">
+      <DependentUpon>SelectFormForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Gene\AddGeneForm.resx">
+      <DependentUpon>AddGeneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Gene\GeneManageForm.resx">
+      <DependentUpon>GeneManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\AddBornForm.resx">
+      <DependentUpon>AddBornForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\AddCowOrderInForm.resx">
+      <DependentUpon>AddCowOrderInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\AddCowOrderOutForm.resx">
+      <DependentUpon>AddCowOrderOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\AddDeadForm.resx">
+      <DependentUpon>AddDeadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\OtherOrderManageForm.af.resx">
+      <DependentUpon>OtherOrderManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\OtherOrderManageForm.resx">
+      <DependentUpon>OtherOrderManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\OrderOutWizardForm.resx">
+      <DependentUpon>OrderOutWizardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\InOrderForm.resx">
+      <DependentUpon>InOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\OrderInWizardForm.resx">
+      <DependentUpon>OrderInWizardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\OrderManageForm.af.resx">
+      <DependentUpon>OrderManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\OrderManageForm.resx">
+      <DependentUpon>OrderManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Order\OutOrderForm.resx">
+      <DependentUpon>OutOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Recipes\RecipesCalculateDetailForm.resx">
+      <DependentUpon>RecipesCalculateDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Recipes\RecipesCalculateForm.resx">
+      <DependentUpon>RecipesCalculateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Recipes\AddRecipesForm.resx">
+      <DependentUpon>AddRecipesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Recipes\RecipesManageForm.resx">
+      <DependentUpon>RecipesManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Resource\AddResourceForm.resx">
+      <DependentUpon>AddResourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Resource\ResourceExplorerForm.resx">
+      <DependentUpon>ResourceExplorerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Resource\ResourceManagerForm.resx">
+      <DependentUpon>ResourceManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Setting\BackUpForm.resx">
+      <DependentUpon>BackUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Setting\DatabaseSettingForm.resx">
+      <DependentUpon>DatabaseSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Setting\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Setting\InformationSettingForm.resx">
+      <DependentUpon>InformationSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Static\CowPriceChartForm.resx">
+      <DependentUpon>CowPriceChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Static\CowPriceStaticForm.resx">
+      <DependentUpon>CowPriceStaticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Static\StaticForm.resx">
+      <DependentUpon>StaticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Supplies\AddStockDetailForm.resx">
+      <DependentUpon>AddStockDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Supplies\AddVaccineForm.resx">
+      <DependentUpon>AddVaccineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Supplies\RemoveStockDetailForm.resx">
+      <DependentUpon>RemoveStockDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Supplies\NewStockForm.resx">
+      <DependentUpon>NewStockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Supplies\StockDetailForm.resx">
+      <DependentUpon>StockDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\Supplies\StockManageForm.resx">
+      <DependentUpon>StockManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\User\AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\User\ChangePassForm.resx">
+      <DependentUpon>ChangePassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\User\UserDetailForm.resx">
+      <DependentUpon>UserDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\User\UserLoginForm.resx">
+      <DependentUpon>UserLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\User\UserManageForm.resx">
+      <DependentUpon>UserManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Database\FarmManageDataSet.xsc">
+      <DependentUpon>FarmManageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database\FarmManageDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FarmManageDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Database\FarmManageDataSet.xss">
+      <DependentUpon>FarmManageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cow-head-icon.ico" />
+    <Content Include="Database\FarmManageDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database\FarmManageDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>FarmManageDatabase.mdf</DependentUpon>
+    </Content>
+    <None Include="ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\cow-icon_256x256.png" />
+    <None Include="Resources\cow-head-icon.ico" />
+    <None Include="Resources\cow-head-icon_32x32.png" />
+    <None Include="Resources\cow-head-icon_128x128.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
